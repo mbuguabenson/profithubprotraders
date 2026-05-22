@@ -73,10 +73,10 @@
         },
         "hostname": {
             "production": {
-                "com": "bot.yourbrand.com"
+                "com": "profithubprotraders.vercel.app"
             },
             "staging": {
-                "com": "staging-bot.yourbrand.com"
+                "com": "staging.profithubprotraders.vercel.app"
             }
         },
         "auth2_url": {
