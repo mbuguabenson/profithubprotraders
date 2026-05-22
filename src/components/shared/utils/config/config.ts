@@ -17,9 +17,18 @@ export const STAGING_DOMAINS = {
 } as const;
 
 // WebSocket server URLs
+const toWebSocketScheme = (url: string) => {
+    try {
+        // Convert http/https base URL to ws/wss while preserving host and path
+        return url.replace(/^http:/i, 'ws:').replace(/^https:/i, 'wss:');
+    } catch (e) {
+        return url;
+    }
+};
+
 export const WS_SERVERS = {
-    STAGING: `${brandConfig.platform.derivws.url.staging}options/ws/public`,
-    PRODUCTION: `${brandConfig.platform.derivws.url.production}options/ws/public`,
+    STAGING: `${toWebSocketScheme(brandConfig.platform.derivws.url.staging)}options/ws/public`,
+    PRODUCTION: `${toWebSocketScheme(brandConfig.platform.derivws.url.production)}options/ws/public`,
 } as const;
 
 // =============================================================================
