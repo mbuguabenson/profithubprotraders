@@ -27,7 +27,9 @@ const toWebSocketScheme = (url: string) => {
 };
 
 export const WS_SERVERS = {
-    STAGING: `${toWebSocketScheme(brandConfig.platform.derivws.url.staging)}options/ws/public`,
+    // Use production public WS URL also for staging/default in this white-label
+    // to ensure connections use the documented public endpoint
+    STAGING: `${toWebSocketScheme(brandConfig.platform.derivws.url.production)}options/ws/public`,
     PRODUCTION: `${toWebSocketScheme(brandConfig.platform.derivws.url.production)}options/ws/public`,
 } as const;
 
