@@ -16,60 +16,38 @@ export const BrandLogo = ({
     fill = 'currentColor',
     className = ''
 }: TBrandLogoProps) => {
+    // Simple vector logo: yellow circle monogram + black brand wordmark
     return (
         <svg
             width={width}
             height={height}
-            viewBox="0 0 120 32"
+            viewBox="0 0 160 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className={className}
-            aria-label="Brand Logo Placeholder"
+            aria-label="Profithubpro logo"
         >
-            {/* [AI] ⚠️ PLACEHOLDER - Replace with your brand's SVG */}
-
-            {/* Dashed border box to indicate placeholder */}
-            <rect
-                x="1"
-                y="1"
-                width="118"
-                height="30"
-                rx="4"
-                opacity="0.3"
-                fill="none"
-            />
-
-            {/* Image icon placeholder */}
-            <g transform="translate(8, 8)">
-                {/* Picture frame icon */}
-                <rect x="0" y="0" width="16" height="16" rx="2" stroke={fill} strokeWidth="1.5" fill="none" opacity="0.4" />
-
-                {/* Mountain/landscape icon inside */}
-                <path
-                    d="M2 12L6 8L9 11L14 6V14H2V12Z"
-                    fill={fill}
-                    opacity="0.3"
-                />
-
-                {/* Sun/circle in corner */}
-                <circle cx="11" cy="5" r="1.5" fill={fill} opacity="0.3" />
+            {/* Circle monogram */}
+            <g transform="translate(0,0)">
+                <circle cx="16" cy="16" r="14" fill="#FFC700" />
+                <path d="M10 21 L18 11 L22 14 L14 24 Z" fill="#000000" opacity="0.95" />
             </g>
 
-            {/* "YOUR LOGO" text */}
+            {/* Wordmark */}
             <text
-                x="30"
+                x="40"
                 y="20"
-                fontFamily="system-ui, -apple-system, sans-serif"
-                fontSize="11"
-                fontWeight="500"
-                fill={fill}
-                opacity="0.5"
-                letterSpacing="0.5"
+                fontFamily="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+                fontSize="14"
+                fontWeight="700"
+                fill="#000000"
+                letterSpacing="0.2"
             >
-                BRAND LOGO
+                Profithubpro
             </text>
 
-            {/* [/AI] */}
+            {/* Silver underline accent */}
+            <rect x="40" y="24" width="88" height="2" rx="1" fill="#C0C0C0" />
         </svg>
     );
 };
